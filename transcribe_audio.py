@@ -8,7 +8,7 @@ def transcribe_audio(audio_queue, english_text_queue):
 
     Args:
         audio_queue (queue.Queue): The queue to read from and transcribe
-        english_text_queue (queue.Queue): The queue to put transcribe texts into
+        english_text_queue (queue.Queue): The queue to put transcribed texts into
     """
     audio_model = whisper.load_model(config.WHISPER_MODEL_PATH).to("cuda" if torch.cuda.is_available() else "cpu")
 
