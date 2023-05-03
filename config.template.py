@@ -1,0 +1,2 @@
+WHISPER_MODEL_PATH = "..."
+DEEPL_AUTH_KEY = "..."

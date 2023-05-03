@@ -1,0 +1,12 @@
+SpeechRecognition
+# to use microphone with SpeechRecognition
+pyaudio
+
+torch
+git+https://github.com/openai/whisper.git
+--extra-index-url https://download.pytorch.org/whl/cu113
+
+deepl
+requests
+
+pynput
