@@ -1,6 +1,7 @@
 SpeechRecognition
 # to use microphone with SpeechRecognition
 pyaudio
+numpy
 
 torch
 git+https://github.com/openai/whisper.git
