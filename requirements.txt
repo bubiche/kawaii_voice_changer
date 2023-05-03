@@ -11,3 +11,5 @@ deepl
 requests
 
 pynput
+
+httpx>=0.24.0
