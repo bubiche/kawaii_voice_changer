@@ -71,3 +71,11 @@ with Client() as client:
      with open("test.wav", "wb") as f:
         f.write(client.text_to_speech("交流できて嬉しいです", speaker_id=10))
 ```
+
+# List audio devices
+
+```python
+import sounddevice as sd
+
+print(sd.query_devices())
+```
