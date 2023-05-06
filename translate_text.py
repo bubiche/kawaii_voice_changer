@@ -17,4 +17,4 @@ def translate_text(english_text_queue, japanese_text_queue):
         print(f"ENGLISH: {transcribed_text}")
         translated_text = text_translator.translate_text(transcribed_text, target_lang="JA")
         print(f"JAPANESE: {translated_text}")
-        # japanese_text_queue.put_nowait(translated_text)
+        japanese_text_queue.put_nowait(translated_text)
