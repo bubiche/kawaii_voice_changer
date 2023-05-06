@@ -4,6 +4,7 @@
 Rename/copy config.template.py to config.py
 Download whisper's models (https://github.com/openai/whisper#available-models-and-languages) and update `WHISPER_MODEL_PATH` in config.py with the path to the model file of your choice.
 Register for a DeepL account on https://www.deepl.com/ and update `DEEPL_AUTH_KEY` in config.py with your key.
+Update the array `VOICE_OUTPUT_DEVICE_IDS` in config.py with devices that you want the final voice to go to (e.g. speaker/headphone/"fake" microphone for voice chats)
 SET `SPEAKER_ID` in voicevox_client/voice_config.py to your desired speaker ID. See below for how to check the voices out.
 
 ```bash
@@ -30,8 +31,8 @@ Paste the code below:
 ```python
 from voicevox_client.client import Client
 
-async with Client() as client:
-    for speaker in await client.fetch_speakers():
+with Client() as client:
+    for speaker in client.fetch_speakers():
         print(speaker)
 ```
 
@@ -48,8 +49,8 @@ Paste the code below:
 ```python
 from voicevox_client.client import Client
 
-async with Client() as client:
-    speaker = await client.fetch_speaker_info("<speaker_uuid>")
+with Client() as client:
+    speaker = client.fetch_speaker_info("<speaker_uuid>")
     # speaker["portrait"] is an base64 encoded image
     # speaker["style_infos"] is an array where each element contains id (style id), portrait (base64 encoded image), icon (base64 encoded image), voice_samples (array of base64 encoded voice samples)
     # Sample code to write the base64 encoded data to a file:
@@ -66,7 +67,7 @@ Start python console with asyncio: `python -m asyncio`
 ```python
 from voicevox_client.client import Client
 
-async with Client() as client:
+with Client() as client:
      with open("test.wav", "wb") as f:
-        f.write(await client.text_to_speech("交流できて嬉しいです", speaker_id=10))
+        f.write(client.text_to_speech("交流できて嬉しいです", speaker_id=10))
 ```
