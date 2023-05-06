@@ -24,7 +24,7 @@ docker compose -f docker-compose.cpu.yml up
 
 # Get list of Voicevox Speakers
 
-Start python REPL with asyncio: `python -m asyncio`
+Start python console with asyncio: `python -m asyncio`
 Paste the code below:
 
 ```python
@@ -42,7 +42,7 @@ We can combine `speaker_uuid` and `id` to check voice samples from the get speak
 
 # Get a single Voicevox Speaker's info
 
-Start python REPL with asyncio: `python -m asyncio`
+Start python console with asyncio: `python -m asyncio`
 Paste the code below:
 
 ```python
@@ -57,4 +57,16 @@ async with Client() as client:
     # out_file = ("test.wav")
     # with open(out_file, 'wb') as file:
     #     file.write(decoded)
+```
+
+# Sample of using vox client alone to do TTS
+
+Start python console with asyncio: `python -m asyncio`
+
+```python
+from voicevox_client.client import Client
+
+async with Client() as client:
+     with open("test.wav", "wb") as f:
+        f.write(await client.text_to_speech("交流できて嬉しいです", speaker_id=10))
 ```
