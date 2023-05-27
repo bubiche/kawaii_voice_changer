@@ -6,7 +6,21 @@ What if you can fulfill your dream of becoming a cute girl? Well, it's possible 
 - Translation is done with [DeepL](https://www.deepl.com/).
 - Text to (cute) speech is done with [Voicevox](https://github.com/VOICEVOX/voicevox_engine).
 
-## Demo (on my laptop with only CPU)
+## Table of Contents
+* [Demo](#demo)
+* [Setup](#setup)
+* [Quickstart](#quickstart)
+* [Possible Improvement](#possible-improvement)
+* [Helpful things](#helpful-things)
+  + [Get list of Voicevox Speakers](#get-list-of-voicevox-speakers)
+  + [Get a single Voicevox Speaker info](#get-a-single-voicevox-speaker-info)
+  + [Sample of using vox client alone to do TTS](#sample-of-using-vox-client-alone-to-do-tts)
+  + [List audio devices](#list-audio-devices)
+  + [Use audio output for voice chat](#use-audio-output-for-voice-chat)
+
+## Demo 
+
+On my laptop, only CPU
 
 https://github.com/bubiche/kawaii_voice_changer/assets/15794264/1889f292-95bb-488d-9ed0-9291062e9f4b
 
@@ -42,7 +56,7 @@ poetry shell
 python main.py
 ```
 
-## Possible Improvement(s)
+## Possible Improvement
 
 - Move whisper audio transcription + voicevox engine to some cloud server with GPU or just [Google Colab](https://colab.research.google.com/) if internet connection is good so less local resource is needed and things will run faster.
 
@@ -65,7 +79,7 @@ Each speaker has a `styles` array, each element has its own `id` that can be use
 
 We can combine `speaker_uuid` and `id` to check voice samples from the get speaker info API.
 
-### Get a single Voicevox Speaker's info
+### Get a single Voicevox Speaker info
 
 Run this inside a python console with asyncio (`python -m asyncio`):
 
