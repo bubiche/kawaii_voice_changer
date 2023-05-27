@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "kawaii-voice-changer"
+version = "1.0.0"
+description = ""
+authors = ["bubiche <bubiche95@gmail.com>"]
+readme = "README.md"
+packages = [{include = "kawaii_voice_changer"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+SpeechRecognition = "^3.10.0"
+PyAudio = "^0.2.13"
+numpy = "^1.24.3"
+torch = "^2.0.1"
+deepl = "^1.14.0"
+requests = "^2.31.0"
+pynput = "^1.7.6"
+httpx = ">=0.24.0"
+sounddevice = "0.4.6"
+soundfile = "0.12.1"
+openai-whisper = {git = "https://github.com/openai/whisper.git"}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
